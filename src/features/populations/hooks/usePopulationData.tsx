@@ -1,15 +1,11 @@
 import { useEffect, useState } from "react";
 
 import { getPopulations } from "@src/features/populations/api/getPopulations";
-import type { Population } from "@src/features/populations/types";
+import type { Population, Populations } from "@src/features/populations/types";
 import type { Prefecture } from "@src/features/prefectures/types";
 
 interface UsePopulationDataProps {
   checkedPrefectureIds: Prefecture["id"][];
-}
-
-interface PopulationsState {
-  [key: Prefecture["id"]]: Population[];
 }
 
 const prefecturePopulationDataMap = new Map<Prefecture["id"], Population[]>();
@@ -17,7 +13,7 @@ const prefecturePopulationDataMap = new Map<Prefecture["id"], Population[]>();
 export const usePopulationData = ({
   checkedPrefectureIds,
 }: UsePopulationDataProps) => {
-  const [populations, setPopulations] = useState<PopulationsState>({});
+  const [populations, setPopulations] = useState<Populations>({});
 
   useEffect(() => {
     const fetching = async () => {
@@ -41,7 +37,7 @@ export const usePopulationData = ({
         prefecturePopulationDataMap.set(data.prefectureId, data.populations);
       });
 
-      const newPopulations: PopulationsState = {};
+      const newPopulations: Populations = {};
       for (const prefectureId of checkedPrefectureIds) {
         const data = prefecturePopulationDataMap.get(prefectureId);
         if (data === undefined) {
