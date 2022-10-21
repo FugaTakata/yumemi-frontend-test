@@ -1,20 +1,13 @@
-import {
-  getPrefectures,
-  getPrefecturesApiEndpoint,
-} from "@src/features/prefectures/api/getPrefectures";
 import { usePrefectureCheckbox } from "@src/features/prefectures/hooks/usePrefectureCheckbox";
-import { useFetch } from "@src/hooks/useFetch";
+import { usePrefectureData } from "@src/features/prefectures/hooks/usePrefectures";
 
 import type { NextPage } from "next";
 
 const Home: NextPage = () => {
-  const { data } = useFetch({
-    key: getPrefecturesApiEndpoint,
-    fetcher: getPrefectures,
-  });
+  const { prefectures } = usePrefectureData();
 
   const { renderCheckboxList } = usePrefectureCheckbox({
-    prefectures: data,
+    prefectures,
   });
 
   return <div>{renderCheckboxList()}</div>;
