@@ -37,7 +37,7 @@ export default async function handler(
   const responseData: Prefecture[] = prefecturesData.result.map(
     (prefectureData) => {
       return {
-        id: prefectureData.prefCode,
+        id: prefectureData.prefCode.toString(),
         name: prefectureData.prefName,
       };
     }
