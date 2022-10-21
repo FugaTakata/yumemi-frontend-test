@@ -1,5 +1,5 @@
 import { usePrefectureCheckbox } from "@src/features/prefectures/hooks/usePrefectureCheckbox";
-import { usePrefectureData } from "@src/features/prefectures/hooks/usePrefectures";
+import { usePrefectureData } from "@src/features/prefectures/hooks/usePrefectureData";
 
 import type { NextPage } from "next";
 
