@@ -1,5 +1,5 @@
 import { API_HOST } from "@src/config/const";
-import { SECRET_RESAS_API_KEY } from "@src/config/env";
+import { SECRET_RESAS_API_KEY } from "@src/config/env/server";
 import type { GetPopulationsResponse } from "@src/features/populations/types";
 
 const API_ENDPOINT = API_HOST + "/api/v1/population/composition/perYear";
