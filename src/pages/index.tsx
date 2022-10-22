@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import Head from "next/head";
 
 import { PopulationsLineChart } from "@src/features/populations/components/PopulationsLineChart";
 import { usePopulationData } from "@src/features/populations/hooks/usePopulationData";
@@ -31,6 +32,13 @@ const Home: NextPage = () => {
 
   return (
     <div>
+      <Head>
+        <title>都道府県の人口推移</title>
+        <meta
+          content="都道府県の総人口推移を図で確認できるアプリ"
+          name="description"
+        />
+      </Head>
       <section>
         <h1>都道府県別総人口の推移</h1>
         <p>
