@@ -42,7 +42,6 @@ const getPopulation = async ({
 const convertData = (
   data: GetPopulationsResponse
 ): Population[] | undefined => {
-  console.log(data.result.boundaryYear);
   const populations: Population[] | undefined = data.result.data
     .find((item) => item.label === "総人口")
     ?.data.map(({ year, value }) => {
