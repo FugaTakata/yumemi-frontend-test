@@ -6,7 +6,7 @@ export const getPopulations = async ({
 }: {
   prefectureId: Prefecture["id"];
 }): Promise<Population[]> => {
-  const response = await fetch(`/api/prefectures/${prefectureId}/population`);
+  const response = await fetch(`/api/prefectures/${prefectureId}/populations`);
 
   const data = await response.json();
 
