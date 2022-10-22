@@ -44,9 +44,15 @@ const Home: NextPage = () => {
       </section>
       <section>
         <h2>人口の推移</h2>
-        <div css={graphWrapperStyle}>
-          <PopulationsLineChart graphData={graphData} />
-        </div>
+        {graphData === undefined ? (
+          <div>
+            <p>都道府県を選択すると折れ線図が表示されます</p>
+          </div>
+        ) : (
+          <div css={graphWrapperStyle}>
+            <PopulationsLineChart graphData={graphData} />
+          </div>
+        )}
         <p>出典：RESAS（地域経済分析システム）</p>
         <p>RESAS（地域経済分析システム）APIから取得したデータを加工して作成</p>
       </section>

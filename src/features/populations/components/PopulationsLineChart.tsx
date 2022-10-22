@@ -6,16 +6,12 @@ import { ResponsiveLine } from "@nivo/line";
 import type { Serie } from "@nivo/line";
 
 interface PopulationsLineChartProps {
-  graphData: Serie[] | undefined;
+  graphData: Serie[];
 }
 
 export const PopulationsLineChart = memo(function PopulationsLineChart({
   graphData,
 }: PopulationsLineChartProps) {
-  if (graphData === undefined) {
-    return null;
-  }
-
   return (
     <div css={PopulationsLineChartWrapperStyle}>
       <ResponsiveLine
