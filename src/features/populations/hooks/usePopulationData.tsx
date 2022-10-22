@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getPopulations } from "@src/features/populations/api/getPopulations";
+import { getPopulations } from "@src/features/populations/api/internal/getPopulations";
 import type { Population, Populations } from "@src/features/populations/types";
 import type { Prefecture } from "@src/features/prefectures/types";
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getPrefectures } from "@src/features/prefectures/api/getPrefectures";
+import { getPrefectures } from "@src/features/prefectures/api/internal/getPrefectures";
 import type { Prefecture } from "@src/features/prefectures/types";
 
 export const usePrefectureData = () => {
