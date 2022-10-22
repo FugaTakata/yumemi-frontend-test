@@ -1,5 +1,5 @@
+import { fetchResas } from "@src/api/external/resas";
 import { API_HOST } from "@src/config/const";
-import { SECRET_RESAS_API_KEY } from "@src/config/env/server";
 import type { GetPopulationsResponse } from "@src/features/populations/types";
 
 const API_ENDPOINT = API_HOST + "/api/v1/population/composition/perYear";
@@ -9,14 +9,8 @@ export const getPopulation = async ({
 }: {
   prefCode: number;
 }): Promise<GetPopulationsResponse> => {
-  const headers: RequestInit["headers"] = {
-    "X-API-KEY": SECRET_RESAS_API_KEY,
-  };
-
-  const response = await fetch(
-    API_ENDPOINT + `?prefCode=${prefCode}&cityCode=-`,
-    { headers }
-  );
+  const url = API_ENDPOINT + `?prefCode=${prefCode}&cityCode=-`;
+  const response = await fetchResas(url);
 
   const data = await response.json();
 
