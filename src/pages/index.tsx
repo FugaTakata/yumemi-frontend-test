@@ -29,8 +29,6 @@ const Home: NextPage = () => {
     prefectures,
   });
 
-  console.log(populations);
-
   return (
     <div>
       {renderCheckboxList()}
