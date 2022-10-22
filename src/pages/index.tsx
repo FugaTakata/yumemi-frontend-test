@@ -31,6 +31,12 @@ const Home: NextPage = () => {
 
   return (
     <div>
+      <section>
+        <h1>都道府県別総人口の推移</h1>
+        <p>
+          このアプリケーションでは各都道府県の総人口の推移を折れ線図で確認することができます。
+        </p>
+      </section>
       {renderCheckboxList()}
       <div css={graphWrapperStyle}>
         <PopulationsLineChart graphData={graphData} />
