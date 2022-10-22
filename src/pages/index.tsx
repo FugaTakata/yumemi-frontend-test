@@ -37,12 +37,19 @@ const Home: NextPage = () => {
           このアプリケーションでは各都道府県の総人口の推移を折れ線図で確認することができます。
         </p>
       </section>
-      {renderCheckboxList()}
-      <div css={graphWrapperStyle}>
-        <PopulationsLineChart graphData={graphData} />
-      </div>
-      <p>出典：RESAS（地域経済分析システム）</p>
-      <p>RESAS（地域経済分析システム）APIから取得したデータを加工して作成</p>
+      <section>
+        <h2>都道府県一覧</h2>
+        <p>興味のある都道府県を選択して人口の推移を確認ましょう。</p>
+        {renderCheckboxList()}
+      </section>
+      <section>
+        <h2>人口の推移</h2>
+        <div css={graphWrapperStyle}>
+          <PopulationsLineChart graphData={graphData} />
+        </div>
+        <p>出典：RESAS（地域経済分析システム）</p>
+        <p>RESAS（地域経済分析システム）APIから取得したデータを加工して作成</p>
+      </section>
     </div>
   );
 };
