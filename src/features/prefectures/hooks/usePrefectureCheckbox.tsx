@@ -75,7 +75,7 @@ export const usePrefectureCheckbox = ({
 
   const renderCheckboxList = useCallback((): JSX.Element => {
     if (prefectures === undefined) {
-      return <p>loading...</p>;
+      return <p>都道府県情報をロード中です</p>;
     }
 
     return (

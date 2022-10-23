@@ -20,7 +20,7 @@ export const PopulationsLineChart = memo(function PopulationsLineChart({
           tickPadding: 4,
           tickRotation: 60,
           legend: "年度",
-          legendOffset: 40,
+          legendOffset: 48,
           legendPosition: "middle",
         }}
         axisLeft={{

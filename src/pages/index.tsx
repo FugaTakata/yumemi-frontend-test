@@ -7,12 +7,17 @@ import { usePopulationGraphData } from "@src/features/populations/hooks/usePopul
 import { usePrefectureCheckbox } from "@src/features/prefectures/hooks/usePrefectureCheckbox";
 import { usePrefectureData } from "@src/features/prefectures/hooks/usePrefectureData";
 import { useErrorToast } from "@src/hooks/useErrorToast";
+import { pageContainerStyle } from "@src/styles/global";
 
 import type { NextPage } from "next";
 
 const graphWrapperStyle = css`
   height: 600px;
   overflow-x: scroll;
+`;
+
+const sectionStyle = css`
+  padding-bottom: 16px;
 `;
 
 const Home: NextPage = () => {
@@ -34,7 +39,7 @@ const Home: NextPage = () => {
   const { renderToast } = useErrorToast();
 
   return (
-    <div>
+    <div css={pageContainerStyle}>
       <Head>
         <title>都道府県の人口推移</title>
         <meta
@@ -43,13 +48,13 @@ const Home: NextPage = () => {
         />
       </Head>
       {renderToast()}
-      <section>
+      <section css={sectionStyle}>
         <h1>都道府県別総人口の推移</h1>
         <p>
           このアプリケーションでは各都道府県の総人口の推移を折れ線図で確認することができます。
         </p>
       </section>
-      <section>
+      <section css={sectionStyle}>
         <h2>都道府県一覧</h2>
         <p>興味のある都道府県を選択して人口の推移を確認ましょう。</p>
         {renderCheckboxList()}
