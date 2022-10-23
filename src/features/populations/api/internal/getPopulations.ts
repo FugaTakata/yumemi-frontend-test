@@ -8,6 +8,11 @@ export const getPopulations = async ({
 }): Promise<Population[]> => {
   const response = await fetch(`/api/prefectures/${prefectureId}/populations`);
 
+  if (!response.ok) {
+    console.error(response);
+    throw new Error(response.statusText);
+  }
+
   const data = await response.json();
 
   return data;

@@ -6,6 +6,7 @@ import { usePopulationData } from "@src/features/populations/hooks/usePopulation
 import { usePopulationGraphData } from "@src/features/populations/hooks/usePopulationGraphData";
 import { usePrefectureCheckbox } from "@src/features/prefectures/hooks/usePrefectureCheckbox";
 import { usePrefectureData } from "@src/features/prefectures/hooks/usePrefectureData";
+import { useErrorToast } from "@src/hooks/useErrorToast";
 
 import type { NextPage } from "next";
 
@@ -30,6 +31,8 @@ const Home: NextPage = () => {
     prefectures,
   });
 
+  const { renderToast } = useErrorToast();
+
   return (
     <div>
       <Head>
@@ -39,6 +42,7 @@ const Home: NextPage = () => {
           name="description"
         />
       </Head>
+      {renderToast()}
       <section>
         <h1>都道府県別総人口の推移</h1>
         <p>
