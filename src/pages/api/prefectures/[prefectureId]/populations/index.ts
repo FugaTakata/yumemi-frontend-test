@@ -4,10 +4,7 @@ import { convertToClientData } from "@src/features/populations/utils";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+const getHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   const prefectureId = Number(req.query.prefectureId);
   if (isNaN(prefectureId)) {
     res.status(400).json({ message: "Invalid query" });
@@ -25,4 +22,16 @@ export default async function handler(
   }
 
   res.status(200).json(clientFriendlyData);
+};
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  switch (req.method) {
+    case "GET":
+      return getHandler(req, res);
+    default:
+      return res.status(405).json({ message: "Method Not Allowed" });
+  }
 }
