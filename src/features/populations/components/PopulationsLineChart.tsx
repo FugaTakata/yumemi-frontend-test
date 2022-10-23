@@ -27,8 +27,8 @@ export const PopulationsLineChart = memo(function PopulationsLineChart({
           tickSize: 5,
           tickPadding: 4,
           tickRotation: 0,
-          legend: "count",
-          legendOffset: -64,
+          legend: "総人口",
+          legendOffset: -72,
           legendPosition: "middle",
         }}
         axisRight={null}
@@ -51,7 +51,7 @@ export const PopulationsLineChart = memo(function PopulationsLineChart({
             symbolBorderColor: "rgba(0, 0, 0, .5)",
           },
         ]}
-        margin={{ top: 64, right: 88, bottom: 64, left: 80 }}
+        margin={{ top: 8, right: 88, bottom: 64, left: 88 }}
         pointBorderColor={{ from: "serieColor" }}
         pointBorderWidth={2}
         pointColor={{ theme: "background" }}
