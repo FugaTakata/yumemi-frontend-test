@@ -1,10 +1,18 @@
 import { getPrefectures } from "@src/features/prefectures/api/external/getPrefectures";
+import type { GetPrefecturesResponse } from "@src/features/prefectures/types";
 import { convertToClientData } from "@src/features/prefectures/utils";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 
 const getHandler = async (_req: NextApiRequest, res: NextApiResponse) => {
-  const data = await getPrefectures();
+  let data: GetPrefecturesResponse;
+
+  try {
+    data = await getPrefectures();
+  } catch (error) {
+    res.status(400).end();
+    return;
+  }
 
   const clientFriendlyData = convertToClientData(data);
 
