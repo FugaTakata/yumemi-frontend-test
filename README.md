@@ -4,6 +4,14 @@
 
 ## Getting Started
 
+- [RESAS API](https://opendata.resas-portal.go.jp/)の利用登録を行い、API キーを`.env.sample`を参考に`.env.local`などに登録する
+
+```.env
+RESAS_API_KEY=ここにAPIキー
+```
+
+- 次に以下のコマンドを実行する
+
 ```bash
 npm ci
 npm run dev
