@@ -12,6 +12,10 @@ export const getPopulation = async ({
   const url = API_ENDPOINT + `?prefCode=${prefCode}&cityCode=-`;
   const response = await fetchResas(url);
 
+  if (!response.ok) {
+    throw new Error(response.statusText);
+  }
+
   const data = await response.json();
 
   return data;
