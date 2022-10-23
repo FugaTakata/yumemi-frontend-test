@@ -28,7 +28,7 @@ export const PopulationsLineChart = memo(function PopulationsLineChart({
           tickPadding: 4,
           tickRotation: 0,
           legend: "総人口",
-          legendOffset: -64,
+          legendOffset: -72,
           legendPosition: "middle",
         }}
         axisRight={null}
