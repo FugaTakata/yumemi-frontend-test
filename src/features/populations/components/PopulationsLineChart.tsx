@@ -51,7 +51,7 @@ export const PopulationsLineChart = memo(function PopulationsLineChart({
             symbolBorderColor: "rgba(0, 0, 0, .5)",
           },
         ]}
-        margin={{ top: 8, right: 88, bottom: 64, left: 80 }}
+        margin={{ top: 8, right: 88, bottom: 64, left: 88 }}
         pointBorderColor={{ from: "serieColor" }}
         pointBorderWidth={2}
         pointColor={{ theme: "background" }}
